@@ -6,21 +6,7 @@ export default {
   components: {
     ContactList,
     NewContact
-  },
-  data() {
-    return {
-        add: false,
-        buttonTxt: 'Add new contact'
-
-    }
-  },
-  methods: {
-    toggle() {
-        this.add = !this.add
-        this.buttonTxt = this.add ? 'Close' : 'Add new contact'
-    },
-    
-  }
+  }  
   
 }
 
@@ -28,11 +14,11 @@ export default {
 
 
 <template>
-    <div>
-        <h1>Home</h1>
-        <button @click="toggle">{{buttonTxt}}</button>
-        <div v-if="add"><NewContact/></div>
-        <div><ContactList/></div>
+    <div class="Home--container">
+        <h1>Vue Contacts App</h1>
+        
+        <NewContact/>
+        <ContactList/>
     </div>
 </template>
 

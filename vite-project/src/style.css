@@ -1,29 +1,186 @@
 body {
   font-family: sans-serif;
- 
+  background-color: lightblue;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  height: 40px;
+  margin: 8px 0;
+}
+
+#app {
+  background-color: lightblue;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  
+}
+
+.Home--container, .contactDetails--container {
+  margin: auto;
+  border-radius: 10px;
+  background-color:azure;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  gap: 20px;
+}
+
+.contact-fields--add {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+
+}
+
+.contact-fields--add:hover {
+  background-color: rgb(46, 107, 221);
+  color: white;
 }
 
 .contact-fields--form {
   
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 300px;
-  background-color: lightblue;
-  justify-content: space-around;
+  background-color:cornflowerblue;
   padding: 20px;
   border-radius: 10px;
-  align-items: stretch;
+  
 }
 
-.contact-fields--form div  {
+
+
+
+.contact-fields--form h2 {
+  margin-top: 0px; 
+}
+
+.contact-fields--form>div  {
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-start; */
+  align-items: stretch;
   line-height: 1.5;
+  padding: 8px 0;
 
 }
 
-.contact-fields--form button {
+
+
+.contact-fields--form--close {
+  align-self: flex-end;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ContactList--container, .contactDetails--details{
+  display: flex;
+  flex-direction:  column;
+  
+  width: 100%;
+  border-radius: 10px;
+}
+.ContactList--container {
+  background-color: rgb(0, 100, 100);
+}
+.ContactList--list {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.ContactList-link {
+  text-decoration: none;
+  color: black;
+}
+
+.ContactList-link:hover{
+  
+  color: white;
+}
+
+.ContactList--item {
+  
+  padding: 10px;
+  background-color: azure;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.ContactList--item:hover {
+  background-color:rgb(64, 123, 232);
+}
+
+.ContactList--header{
+  color: #fff;
+  padding: 20px;
+}
+
+.contactDetails--details h2{
+  padding: 20px;
+}
+
+.contactDetails--delete {
+  background-color:lightcoral;
+  border: none;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.contactDetails--delete:hover{
+  background-color:rgb(140, 43, 43);
+  color: white;
+}
+
+.contactDetails--header {
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.contactDetails--header h2 {
+  margin: 0;
+  padding-bottom: 0px;
+}
+.contactDetails--update {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  
+  margin: 0 0 10px 0;
+}
+
+.contactDetails--back{
+  text-decoration: none;
+  background-color: rgb(123, 216, 95);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
+  border-radius: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+.contactDetails--back:hover {
+  background-color: rgb(84, 156, 63);
+  color: white;
 }

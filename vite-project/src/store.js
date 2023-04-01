@@ -1,6 +1,8 @@
 import { reactive } from 'vue'
 let id = 0
 
+
+
 function slugify(text){
   //From https://github.com/KABBOUCHI/vue-slugify/blob/master/vue-slugify.js
   return text.toString().toLowerCase()
@@ -23,21 +25,22 @@ export const store = reactive({
       }) 
       
     },
-    storeUpdate(f, l, e, id) {
-      return this.contacts.map(contact => {
-        return contact.id === id 
-        ? {
-          ...contact,
-          firstName: f,
-          lastName: l,
-          email: e
-        } 
-        : contact
-      })
-    },
+    
     storeDelete(id) {
       this.contacts = this.contacts.filter(contact => contact.id !== id)
-      
+      for(let i=0; i < store.contacts.length; i++) {
+        
+        store.contacts[i].id = i+1 
+      }
+    },
+    updateSlug(id) {
+      this.contacts = this.contacts.map(contact=> contact.id === id 
+        ? {...contact, slug: `${slugify(contact.firstName)}-${slugify(contact.lastName)}`} 
+        : contact)
+    },
+
+    updateStorage(){
+      localStorage.setItem('contacts',JSON.stringify(store.contacts))
     }
   }
 )
