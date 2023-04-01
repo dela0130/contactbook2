@@ -21,6 +21,10 @@
                 return store.contacts.filter(contact => {
                     return contact.id === this.detailsPageId
                 })
+            },
+            modifyContact(f,l,e,id) {
+                store.storeUpdate(f, l, e, id)
+                localStorage.setItem('contacts',JSON.stringify(store.contacts))
             }
         }
     }
@@ -30,7 +34,7 @@
     <router-link to="/">Back Home</router-link>
     <h2>Contact Details for {{displayContact.firstName}} {{displayContact.lastName}}</h2>
     <form
-    @submit.prevent="store.storeUpdate(
+    @submit.prevent="modifyContact(
         currentContact()[0].firstName, 
         currentContact()[0].lastName, 
         currentContact()[0].email, 
