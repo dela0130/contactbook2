@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+ 
+}
+
+.contact-fields--form {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  background-color: lightblue;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: stretch;
+}
+
+.contact-fields--form div  {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  line-height: 1.5;
+
+}
+
+.contact-fields--form button {
+  height: 40px;
+}
