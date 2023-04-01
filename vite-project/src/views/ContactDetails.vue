@@ -3,7 +3,8 @@
     export default {
         data() {
             return {
-                store
+                store,
+                destroy: false,
             }
         },
 
@@ -25,13 +26,20 @@
             modifyContact(f,l,e,id) {
                 store.storeUpdate(f, l, e, id)
                 localStorage.setItem('contacts',JSON.stringify(store.contacts))
+            },
+            deleteContact(id) {
+                this.destroy = !this.destroy
+                store.storeDelete(id)
+                localStorage.setItem('contacts',JSON.stringify(store.contacts))
+                this.$router.push("/")
             }
         }
     }
 </script>
 
 <template>
-    <router-link to="/">Back Home</router-link>
+    <div v-if="!destroy">
+        <router-link to="/">Back Home</router-link>
     <h2>Contact Details for {{displayContact.firstName}} {{displayContact.lastName}}</h2>
     <form
     @submit.prevent="modifyContact(
@@ -65,5 +73,8 @@
             Edit
         </button>
     </form>
+    <button @click="deleteContact(currentContact()[0].id)">Delete</button>
+    </div>
+    
     
 </template>

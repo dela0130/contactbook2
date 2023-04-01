@@ -5,7 +5,13 @@
             return {
                 store
             }
+        },
+        computed: {
+            sortedByLast() {
+                
+            }
         }
+       
     }
 </script>
 
@@ -17,7 +23,7 @@
             :key="contact.id"
             :to="{name: 'contact.details', params:{id: contact.id, slug: contact.slug} }"
             >
-            <div>{{contact.firstName}}  {{contact.lastName}}</div>
+            <div>{{contact.lastName}}, {{contact.firstName}}  </div>
             
         </router-link>
 

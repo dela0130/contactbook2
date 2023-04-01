@@ -34,6 +34,10 @@ export const store = reactive({
         } 
         : contact
       })
+    },
+    storeDelete(id) {
+      this.contacts = this.contacts.filter(contact => contact.id !== id)
+      
     }
-    }
+  }
 )
